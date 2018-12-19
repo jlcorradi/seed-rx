@@ -2,6 +2,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
 const DIST = path.join(__dirname, '/dist')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
 	entry: './src/index.js',
@@ -12,8 +13,15 @@ module.exports = {
 	module: {
 		rules: [
 			{ test: /\.(js|jsx)$/, use: { loader: 'babel-loader' } },
-			{ test: /\.css$/, use: ['style-loader', 'css-loader'] },
-			{ test: /\.(ttf|eot|svg|woff|woff(2)|jpg|jpeg|ico|bmp|png)$/, use: ['file-loader'] }
+			{ test: /\.(ttf|eot|svg|woff|woff(2)|jpg|jpeg|ico|bmp|png)$/, use: ['file-loader'] },
+			{
+				test: /\.scss$/,
+				use: ExtractTextPlugin.extract({
+					fallback: 'style-loader',
+					use: 'css-loader!sass-loader'
+				})
+			},
+			{ test: /\.css$/, use: ['style-loader', 'css-loader'] }
 		]
 	},
 	resolve: { extensions: ['.js', '.jsx'] },
@@ -24,7 +32,8 @@ module.exports = {
 		new webpack.ProvidePlugin({
 			$: 'jquery',
 			jQuery: 'jquery'
-		})
+		}),
+		new ExtractTextPlugin('style.css')
 	],
 	devServer: {
 		port: 4300,
