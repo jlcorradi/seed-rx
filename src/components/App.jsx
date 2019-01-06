@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Link, Switch, Route } from 'react-router-dom';
 import classNames from 'classnames';
-import HeaderSection from './HeaderSection';
+import HeaderSection from './layout/HeaderSection';
 
 export default class App extends Component {
   state = {
