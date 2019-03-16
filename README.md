@@ -12,7 +12,7 @@ Install the dependencies listed in package.json:
 ```
 npm install
 ```
-Start the react-dev-server
+Start the react-dev-server:
 ```
 npm start
 ```
