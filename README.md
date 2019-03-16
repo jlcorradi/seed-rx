@@ -14,8 +14,6 @@ npm install
 ```
 Start the react-dev-server
 ```
-npm run dev
-```
 npm start
 ```
 # Important notes
