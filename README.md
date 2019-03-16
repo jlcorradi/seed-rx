@@ -2,7 +2,7 @@
 Nice Looking starter template for react application
 
 # features
-Wel designed spa, with nice scheleton and css.
+Well designed spa, with nice scheleton and css.
 
 # requirements
 npm
