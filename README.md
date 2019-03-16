@@ -1,4 +1,4 @@
-## seed-rx
+# seed-rx
 Nice Looking starter template for react application
 
 ## features
