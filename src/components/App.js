@@ -1,7 +1,7 @@
-import React, { Component, Fragment } from 'react';
-import { Link, Switch, Route } from 'react-router-dom';
-import classNames from 'classnames';
-import HeaderSection from './layout/HeaderSection';
+import React, { Component } from "react";
+import { Link, Switch, Route } from "react-router-dom";
+import classNames from "classnames";
+import { HomeView, AboutView } from "../views";
 
 export default class App extends Component {
   state = {
@@ -11,10 +11,12 @@ export default class App extends Component {
   render() {
     let { sidebarActive } = this.state;
     return (
-      <div className={classNames('wrapper', { 'sidebar-active': sidebarActive })}>
+      <div
+        className={classNames("wrapper", { "sidebar-active": sidebarActive })}
+      >
         <div id="sidebar">
           <div className="sidebar-header text-center">
-            <span className="ti-cup" style={{ fontSize: '40px' }} />
+            <span className="ti-cup" style={{ fontSize: "40px" }} />
             <p>Playground</p>
           </div>
           <ul className="menu list-unstyled">
@@ -28,7 +30,10 @@ export default class App extends Component {
 
         <div className="content">
           <nav class="navbar navbar-expand-lg">
-            <a onClick={() => this.setState({ sidebarActive: !sidebarActive })} className="nav-link">
+            <a
+              onClick={() => this.setState({ sidebarActive: !sidebarActive })}
+              className="nav-link"
+            >
               <i className="fa fa-bars" />
             </a>
             <ul className="navbar-nav ml-auto">
@@ -51,29 +56,3 @@ export default class App extends Component {
     );
   }
 }
-
-const HomeView = props => {
-  return (
-    <Fragment>
-      <HeaderSection title="Home" subtitle="Home View" />
-      <div className="row">
-        <div className="col-md-12">
-          <div className="box">
-            <HeaderSection title="Box">
-              <button className="btn btn-primary">Action</button>
-            </HeaderSection>
-            <p>Lorem</p>
-          </div>
-        </div>
-      </div>
-    </Fragment>
-  );
-};
-
-const AboutView = props => {
-  return (
-    <Fragment>
-      <HeaderSection title="About" subtitle="About View" />
-    </Fragment>
-  );
-};
