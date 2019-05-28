@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function HeaderSection(props) {
+const HeaderSection = (props) => {
   return (
     <div class="d-flex">
       <div className="flex-fill">
