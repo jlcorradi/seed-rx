@@ -13,7 +13,7 @@ export const App = () => {
       <Sidebar></Sidebar>
 
       <div className="content">
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand">
           <a
             onClick={() => setSidebarActive(!sidebarActive)}
             className="nav-link"
