@@ -72,6 +72,16 @@ a:hover {
   }
 }
 
+#sidebar-close-btn {
+  display: none;
+  position: absolute;
+  top: 20px;
+  left: $sidebarWidth;
+  margin-left: -40px;
+  color: $white;
+  cursor: pointer;
+}
+
 .wrapper.sidebar-active {
   #sidebar {
     margin-left: -$sidebarWidth;
@@ -145,6 +155,10 @@ a:hover {
     .navbar {
       margin-left: $sidebarWidth;
     }
+  }
+
+  #sidebar-close-btn {
+    display: inherit;
   }
 }
 

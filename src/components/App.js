@@ -10,7 +10,7 @@ export const App = () => {
     <div
       className={classNames("wrapper", { "sidebar-active": sidebarActive })}
     >
-      <Sidebar></Sidebar>
+      <Sidebar onHideClick={() => setSidebarActive(false)}></Sidebar>
 
       <div className="content">
         <nav class="navbar navbar-expand">
@@ -37,9 +37,11 @@ export const App = () => {
   );
 };
 
-const Sidebar = () => {
+const Sidebar = (props) => {
+  let { onHideClick } = props;
   return (
     <div id="sidebar">
+      <span id="sidebar-close-btn" className="ti-close" onClick={onHideClick}></span>
       <div className="sidebar-header text-center">
         <span className="ti-cup" style={{ fontSize: "40px" }} />
         <p>Playground</p>
@@ -54,7 +56,7 @@ const Sidebar = () => {
           <a className="dropdown-toggle" href="#subMenu" aria-expanded="false" data-toggle="collapse"><span className="ti-arrow-circle-right" /> Submenu</a>
           <ul className="collapse list-unstyled" id="subMenu">
             <li>
-              <a><span className="ti-arrow-circle-right"/> Item 1</a>
+              <a><span className="ti-arrow-circle-right" /> Item 1</a>
             </li>
           </ul>
         </li>
