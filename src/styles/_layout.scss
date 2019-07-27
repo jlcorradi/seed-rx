@@ -4,15 +4,15 @@
 $sidebarWidth: 250px;
 
 // Colors
-$light-grey: #eef5f5fb;
+$light-grey: #fafafa;
 $subtle-grey: #eaeaea;
 $white: #fff;
 
-$color-primary-0: #226666; // Main Primary color */
-$color-primary-1: #669999;
-$color-primary-2: #407f7f;
-$color-primary-3: #0d4d4d;
-$color-primary-4: #003333;
+$color-primary-0: #2b4a6f; // Main Primary color */
+$color-primary-1: #748ba7;
+$color-primary-2: #4b688b;
+$color-primary-3: #143153;
+$color-primary-4: #051c38;
 
 body {
   font-family: "Poppins", sans-serif !important;
@@ -173,7 +173,8 @@ a:hover {
 
 .nav-link {
   color: $color-primary-3 !important;
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     color: $color-primary-2 !important;
   }
 }

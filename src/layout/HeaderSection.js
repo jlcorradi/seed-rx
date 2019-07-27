@@ -6,7 +6,7 @@ const HeaderSection = (props) => {
     <div class="d-flex">
       <div className="flex-fill">
         <span class="h5">{props.title}</span>
-        <p class="text-muted">{props.subtitle}</p>
+        <p>{props.subtitle}</p>
       </div>
       <div className="ml-auto">{props.children}</div>
     </div>
