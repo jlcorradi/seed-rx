@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, Switch, Route } from "react-router-dom";
 import classNames from "classnames";
 import { HomeView, AboutView } from "../views";
@@ -45,10 +45,18 @@ const Sidebar = () => {
         <p>Playground</p>
       </div>
       <ul className="menu list-unstyled">
-        <li>
+        <li className="active">
           <Link to="/">
             <span className="ti-arrow-circle-right" /> Home
               </Link>
+        </li>
+        <li>
+          <a className="dropdown-toggle" href="#subMenu" aria-expanded="false" data-toggle="collapse"><span className="ti-arrow-circle-right" /> Submenu</a>
+          <ul className="collapse list-unstyled" id="subMenu">
+            <li>
+              <a><span className="ti-arrow-circle-right"/> Item 1</a>
+            </li>
+          </ul>
         </li>
       </ul>
     </div>
