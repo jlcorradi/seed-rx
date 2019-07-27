@@ -37,8 +37,7 @@ body {
 }
 
 a,
-a:focus,
-a:active {
+a:focus {
   color: inherit !important;
   text-decoration: none !important;
   cursor: pointer;
@@ -120,7 +119,7 @@ a:hover {
   a.dropdown-toggle[aria-expanded="true"],
   a:hover,
   a:focus,
-  li.active > a {
+  a.active {
     color: $white !important;
     background-color: $color-primary-3;
     transition: all 0.3s;

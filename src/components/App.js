@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Link, Switch, Route } from "react-router-dom";
+import { NavLink as Link, Switch, Route } from "react-router-dom";
 import classNames from "classnames";
 import { HomeView, AboutView } from "../views";
 
-export const App = () => {
+export const App = (props, context) => {
   const [sidebarActive, setSidebarActive] = useState(false);
 
   return (
@@ -22,9 +22,9 @@ export const App = () => {
           </a>
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-              <Link className="nav-link" to="/about">
+              <Link className="nav-link" activeClassName="active" to="/about">
                 <span className="ti-shield" /> About
-                </Link>
+              </Link>
             </li>
           </ul>
         </nav>
@@ -47,18 +47,25 @@ const Sidebar = (props) => {
         <p>Playground</p>
       </div>
       <ul className="menu list-unstyled">
-        <li className="active">
-          <Link to="/">
+        <li>
+          <Link to="/" activeClassName="active" exact>
             <span className="ti-arrow-circle-right" /> Home
-              </Link>
+          </Link>
         </li>
         <li>
           <a className="dropdown-toggle" href="#subMenu" aria-expanded="false" data-toggle="collapse"><span className="ti-arrow-circle-right" /> Submenu</a>
           <ul className="collapse list-unstyled" id="subMenu">
             <li>
-              <a><span className="ti-arrow-circle-right" /> Item 1</a>
+              <Link activeClassName="active" to="/about" exact>
+                <span className="ti-arrow-circle-right" /> Item 1
+              </Link>
             </li>
           </ul>
+        </li>
+        <li>
+          <Link activeClassName="active" to="/about" exact>
+            <span className="ti-shield" /> About
+              </Link>
         </li>
       </ul>
     </div>
