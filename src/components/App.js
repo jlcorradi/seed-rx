@@ -3,7 +3,7 @@ import { NavLink as Link, Switch, Route } from "react-router-dom";
 import classNames from "classnames";
 import { HomeView, AboutView } from "../views";
 
-export const App = (props, context) => {
+export const App = () => {
   const [sidebarActive, setSidebarActive] = useState(false);
 
   return (
@@ -17,6 +17,7 @@ export const App = (props, context) => {
           <a
             onClick={() => setSidebarActive(!sidebarActive)}
             className="nav-link"
+            id="sidebar-toggler"
           >
             <i className="fa fa-bars" />
           </a>
@@ -63,8 +64,8 @@ const Sidebar = (props) => {
           </ul>
         </li>
         <li>
-          <Link activeClassName="active" to="/about" exact>
-            <span className="ti-shield" /> About
+          <Link activeClassName="active" to="/contact" exact>
+            <span className="ti-envelope" /> Contact
               </Link>
         </li>
       </ul>
@@ -76,5 +77,6 @@ const Routes = () => {
   return (<Switch>
     <Route exact path="/" component={HomeView} />
     <Route exact path="/about" component={AboutView} />
+    <Route exact to="/contact" render={() => (<div>Contact Us</div>)} />
   </Switch>);
 }

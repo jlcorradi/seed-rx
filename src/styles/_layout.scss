@@ -144,15 +144,13 @@ a:hover {
   .content {
     margin-left: 0;
   }
+
   #sidebar {
     margin-left: -$sidebarWidth;
   }
   .wrapper.sidebar-active {
     #sidebar {
       margin-left: 0;
-    }
-    .navbar {
-      margin-left: $sidebarWidth;
     }
   }
 
