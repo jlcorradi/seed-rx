@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-const HeaderSection = (props) => {
+const HeaderSection = props => {
   return (
     <div class="d-flex">
       <div className="flex-fill">
@@ -11,7 +11,7 @@ const HeaderSection = (props) => {
       <div className="ml-auto">{props.children}</div>
     </div>
   );
-}
+};
 
 HeaderSection.propTypes = {
   title: PropTypes.string.isRequired,
