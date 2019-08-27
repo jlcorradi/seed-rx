@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react';
-import { HeaderSection } from '../layout';
+import React from 'react';
+import HeaderSection from '../../layout/HeaderSection';
 
 export default ({ location }) => {
   console.log(location);

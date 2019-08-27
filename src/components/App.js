@@ -1,7 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { HomeView, AboutView } from '../views';
 import SpaTemplate from './SpaTemplate';
+import HomeView from '../views/HomeView';
+import AboutView from '../views/AboutView';
 
 const Routes = () => {
   return (
