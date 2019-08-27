@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import SpaTemplate from './SpaTemplate';
+
+import SpaTemplate from '../components/SpaTemplate';
 import HomeView from '../views/HomeView';
 import AboutView from '../views/AboutView';
 
