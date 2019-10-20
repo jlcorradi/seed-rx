@@ -5,7 +5,7 @@ const DIST = path.join(__dirname, '/dist')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
-	entry: './src/index.js',
+	entry: path.join(__dirname, '/src/index.js'),
 	output: {
 		path: DIST,
 		filename: 'index.bundle.js'
@@ -27,7 +27,7 @@ module.exports = {
 	resolve: { extensions: ['.js', '.jsx'] },
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: './src/index.html'
+			template: path.join(__dirname, '/src/index.html')
 		}),
 		new webpack.ProvidePlugin({
 			$: 'jquery',
