@@ -16,7 +16,7 @@ export default props => {
       </div>
       <ul className="menu list-unstyled">
         <li>
-          <NavLink to="/" activeClassName="active" exact>
+          <NavLink to="/" activeClassName="active" onClick={onHideClick} exact>
             <span className="ti-arrow-circle-right" /> Home
           </NavLink>
         </li>
@@ -31,7 +31,7 @@ export default props => {
           </a>
           <ul className="collapse list-unstyled" id="subMenu">
             <li>
-              <NavLink activeClassName="active" to="/about" exact>
+              <NavLink activeClassName="active" to="/about" onClick={onHideClick} exact>
                 <span className="ti-download" /> Example
               </NavLink>
             </li>

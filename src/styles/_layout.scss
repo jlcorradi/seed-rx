@@ -2,17 +2,18 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800");
 
 $sidebarWidth: 250px;
+$navbarHeidth: 60px;
 
 // Colors
 $light-grey: #fafafa;
 $subtle-grey: #eaeaea;
 $white: #fff;
 
-$color-primary-0: #2b4a6f; // Main Primary color */
-$color-primary-1: #748ba7;
-$color-primary-2: #4b688b;
-$color-primary-3: #143153;
-$color-primary-4: #051c38;
+$color-primary-0: #333; // Main Primary color */
+$color-primary-1: #777;
+$color-primary-2: #555;
+$color-primary-3: #222;
+$color-primary-4: #000;
 
 body {
   font-family: "Poppins", sans-serif !important;
@@ -136,7 +137,7 @@ a:hover {
   color: #676767;
   background-color: $white;
   border-bottom: 1px solid $subtle-grey;
-  height: 70px;
+  height: $navbarHeidth;
   transition: all 0.3s;
 }
 
