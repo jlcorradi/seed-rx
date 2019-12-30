@@ -5,11 +5,7 @@ export default props => {
   let { onHideClick } = props;
   return (
     <div id="sidebar">
-      <span
-        id="sidebar-close-btn"
-        className="ti-close"
-        onClick={onHideClick}
-      ></span>
+      <span id="sidebar-close-btn" className="ti-close" onClick={onHideClick}></span>
       <div className="sidebar-header text-center">
         <span className="ti-cup" style={{ fontSize: '40px' }} />
         <p>Playground</p>
@@ -21,12 +17,7 @@ export default props => {
           </NavLink>
         </li>
         <li>
-          <a
-            className="dropdown-toggle"
-            href="#subMenu"
-            aria-expanded="false"
-            data-toggle="collapse"
-          >
+          <a className="dropdown-toggle" href="#subMenu" aria-expanded="false" data-toggle="collapse">
             <span className="ti-arrow-circle-right" /> Submenu
           </a>
           <ul className="collapse list-unstyled" id="subMenu">

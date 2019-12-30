@@ -60,65 +60,38 @@ const NotificationDemo = () => {
     <>
       <div className="form-group">
         <label htmlFor="txtMessage">Type in your message</label>
-        <input
-          type="text"
-          className="form-control"
-          ref={txtMessage}
-          placeholder="Message goes Here"
-        />
+        <input type="text" className="form-control" ref={txtMessage} placeholder="Message goes Here" />
       </div>
       <div className="form-group">
         <div className="btn-group">
           <button type="button" className="btn btn-info">
             Show Message
           </button>
-          <button
-            type="button"
-            className="btn btn-info dropdown-toggle dropdown-toggle-split"
-            id="dropdownMenuReference"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-            data-reference="parent"
-          >
+          <button type="button" className="btn btn-info dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false" data-reference="parent">
             <span className="sr-only">Toggle Dropdown</span>
           </button>
-          <div
-            className="dropdown-menu"
-            aria-labelledby="dropdownMenuReference"
-          >
-            <a
-              className="dropdown-item"
-              href="#"
+          <div className="dropdown-menu" aria-labelledby="dropdownMenuReference">
+            <a className="dropdown-item" href="#"
               onClick={() =>
                 NotificationManager.success(txtMessage.current.value)
-              }
-            >
+              }>
               <span className="text-success">Success</span>
             </a>
-            <a
-              className="dropdown-item"
-              href="#"
-              onClick={() => NotificationManager.info(txtMessage.current.value)}
-            >
+            <a className="dropdown-item" href="#"
+              onClick={() => NotificationManager.info(txtMessage.current.value)}>
               <span className="text-info">Information</span>
             </a>
-            <a
-              className="dropdown-item"
-              href="#"
+            <a className="dropdown-item" href="#"
               onClick={() =>
                 NotificationManager.warning(txtMessage.current.value)
-              }
-            >
+              }>
               <span className="text-warning">Warning</span>
             </a>
-            <a
-              className="dropdown-item"
-              href="#"
+            <a className="dropdown-item" href="#"
               onClick={() =>
                 NotificationManager.error(txtMessage.current.value)
-              }
-            >
+              }>
               <span className="text-danger">Error</span>
             </a>
           </div>
@@ -155,68 +128,36 @@ const DemoForm = () => {
     <form onSubmit={formOnSubmit}>
       <div className="form-group">
         <label htmlFor="txtName">Name</label>
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Type in your name"
-          name="name"
-          value={model['name']}
-          onChange={e => onModelChange(e.target.name, e.target.value)}
-          required
-        />
+        <input type="text" className="form-control" placeholder="Type in your name" name="name" value={model['name']}
+          onChange={e => onModelChange(e.target.name, e.target.value)} required />
       </div>
       <div className="form-group">
         <label htmlFor="txtName">Email</label>
-        <input
-          type="email"
-          className="form-control"
-          placeholder="Type in your email"
-          name="email"
-          value={model['email']}
-          onChange={e => onModelChange(e.target.name, e.target.value)}
-          required
-        />
+        <input type="email" className="form-control" placeholder="Type in your email" name="email" value={model['email']}
+          onChange={e => onModelChange(e.target.name, e.target.value)} required />
       </div>
       <div className="row">
         <div className="col-md-6">
           <div className="form-group">
             <label htmlFor="txtName">Age</label>
-            <input
-              type="number"
-              className="form-control"
-              placeholder="Type in your age"
-              name="age"
-              value={model['age']}
-              onChange={e => onModelChange(e.target.name, e.target.value)}
-            />
+            <input type="number" className="form-control" placeholder="Type in your age" name="age" value={model['age']}
+              onChange={e => onModelChange(e.target.name, e.target.value)} />
           </div>
         </div>
         <div className="col-md-3">
           <div className="form-group">
             <label htmlFor="txtName">Salary</label>
-            <CurrencyInput
-              className="form-control"
-              decimalSeparator=","
-              thousandSeparator="."
-              name="salary"
-              value={model['salary']}
+            <CurrencyInput className="form-control" decimalSeparator="," thousandSeparator="." name="salary" value={model['salary']}
               onChangeEvent={(e, _masked, value) =>
                 onModelChange(e.target.name, value)
-              }
-            />
+              } />
           </div>
         </div>
         <div className="col-md-3">
           <div className="form-group">
             <label htmlFor="txtName">Birth Date</label>
-            <input
-              type="date"
-              className="form-control"
-              placeholder="Type in your Birth date"
-              name="birthDate"
-              value={model['birthDate']}
-              onChange={e => onModelChange(e.target.name, e.target.value)}
-            />
+            <input type="date" className="form-control" placeholder="Type in your Birth date" name="birthDate" value={model['birthDate']}
+              onChange={e => onModelChange(e.target.name, e.target.value)} />
           </div>
         </div>
       </div>
