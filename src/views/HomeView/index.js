@@ -1,8 +1,12 @@
-import React, { Fragment, useRef, useState } from 'react';
+import React, { Fragment, useRef } from 'react';
 import HeaderSection from '../../layout/HeaderSection';
 import { NotificationManager } from 'react-notifications';
 import Http from '../../infra/Http';
 import CurrencyInput from 'react-currency-input';
+import useForm from '../../hooks/useForm';
+import { ruleRunner } from '../../error-utils/ValidationHelper';
+import { required, email } from '../../error-utils/ValidationRules';
+import classnames from 'classnames';
 
 const buttonClick = () => {
   Http.get('/api/todos').then(_response => {
@@ -102,39 +106,39 @@ const NotificationDemo = () => {
 };
 
 const DemoForm = () => {
-  const [model, setModel] = useState({
+  const validations = [
+    ruleRunner('name', 'Name', required),
+    ruleRunner('email', 'Email', required, email),
+  ]
+  const [model, errors, submitted, onModelChange, onSubmit] = useForm({
     name: '',
     birthDate: '',
     salary: '',
     email: '',
     age: '',
-  });
-  const [saved, setSaved] = useState(false);
+  }, validations, formOnSubmit);
 
-  function formOnSubmit(e) {
-    e.preventDefault();
-    Http.post('/api/employees', model).then(_response => {
-      setSaved(true);
-    });
+  function formOnSubmit(model) {
+    Http.post('/api/employees', model);
   }
 
-  function onModelChange(field, value) {
-    let newModel = { ...model };
-    newModel[field] = value;
-    setModel(newModel);
+  function hasError(field) {
+    return submitted && errors[field];
   }
 
   return (
-    <form onSubmit={formOnSubmit}>
-      <div className="form-group">
+    <form onSubmit={onSubmit} noValidate>
+      <div className="form-group" className={classnames({ 'error': hasError('name') })}>
         <label htmlFor="txtName">Name</label>
         <input type="text" className="form-control" placeholder="Type in your name" name="name" value={model['name']}
           onChange={e => onModelChange(e.target.name, e.target.value)} required />
+        <span className="error">{errors.name}</span>
       </div>
-      <div className="form-group">
+      <div className="form-group" className={classnames({ 'error': hasError('email') })}>
         <label htmlFor="txtName">Email</label>
         <input type="email" className="form-control" placeholder="Type in your email" name="email" value={model['email']}
           onChange={e => onModelChange(e.target.name, e.target.value)} required />
+        <span className="error">{errors.email}</span>
       </div>
       <div className="row">
         <div className="col-md-6">
