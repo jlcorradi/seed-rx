@@ -1,12 +1,10 @@
 import React, { Fragment, useRef } from 'react';
 import HeaderSection from '../../layout/HeaderSection';
 import { NotificationManager } from 'react-notifications';
-import Http from '../../infra/Http';
 import CurrencyInput from 'react-currency-input';
-import useForm from '../../hooks/useForm';
-import { ruleRunner } from '../../error-utils/ValidationHelper';
-import { required, email } from '../../error-utils/ValidationRules';
 import classnames from 'classnames';
+
+import { http as Http, ruleRunner, validationRules, useValidation } from 'jlc-react-utils';
 
 const buttonClick = () => {
   Http.get('/api/todos').then(_response => {
@@ -107,10 +105,10 @@ const NotificationDemo = () => {
 
 const DemoForm = () => {
   const validations = [
-    ruleRunner('name', 'Name', required),
-    ruleRunner('email', 'Email', required, email),
+    ruleRunner('name', 'Name', validationRules.required),
+    ruleRunner('email', 'Email', validationRules.required, validationRules.email),
   ]
-  const [model, errors, submitted, onModelChange, onSubmit] = useForm({
+  const [model, errors, submitted, onModelChange, onSubmit] = useValidation({
     name: '',
     birthDate: '',
     salary: '',

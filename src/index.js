@@ -13,9 +13,10 @@ import './styles/main.scss';
 import './assets/themify/themify-icons.css';
 
 import 'react-notifications/lib/notifications.css';
+import 'jlc-react-utils/dist/index.css';
 
 import App from './App';
-import Loader from './components/Loader';
+import { Loader } from 'jlc-react-utils';
 
 ReactDOM.render(
   <Router>
