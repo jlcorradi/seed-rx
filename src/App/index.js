@@ -17,7 +17,8 @@ const Routes = () => {
 export default () => {
   return (
     <SpaTemplate>
-      <Routes></Routes>
+      {/*<Routes></Routes>*/}
+        <HomeView />
     </SpaTemplate>
   );
 };
