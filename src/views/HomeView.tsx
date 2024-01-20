@@ -35,7 +35,7 @@ const NotificationDemo: FC = () => {
           </button>
           <button
             type="button"
-            className="btn btn-info dropdown-toggle dropdown-toggle-split"
+            className=""
             id="dropdownMenuReference"
             data-toggle="dropdown"
             aria-haspopup="true"
@@ -86,9 +86,12 @@ const NotificationDemo: FC = () => {
 const HomeView: FC = () => {
   return (
     <>
-      <HeaderSection title="Home" subtitle="Home View" />
-      <div className="row">
-        <div className="col-md-12">
+      <div className="px-4">
+        <HeaderSection title="Home" subtitle="Home View" />
+      </div>
+
+      <div className="flex">
+        <div className="flex-grow">
           <div className="box">
             <HeaderSection title="Common components" />
             <p>This is how you make the header section look good:</p>
@@ -99,14 +102,14 @@ const HomeView: FC = () => {
             <NotificationDemo />
           </div>
           <div className="box mt-2">
-            <HeaderSection title="Api proxy" />
+            <HeaderSection title="Api proxy" subtitle="Example of how to hit the backend" />
             <p>
-              There is an api proxy set up to prevent cors validation errors
+              There is an API proxy set up to prevent CORS validation errors
               while in development. You may change the appropriate section in
-              webpack-config.js to make it suit your needs.
+              `webpack-config.js` to make it suit your needs.
             </p>
             <p>
-              All api requests are wrapped in a way that a loader component will
+              All API requests are wrapped in a way that a loader component will
               show up after the set threshold, which is 500 milliseconds by
               default, but you can surely customize that.
             </p>

@@ -22,27 +22,14 @@ body {
   font-size: 0.9rem !important;
 }
 
-.form-control {
-  font-weight: 400;
-  color: inherit !important;
-  border-radius: 0;
-  height: auto;
-  padding: 0.325rem 0.75rem;
-  border-radius: 1px;
-  border-color: $subtle-grey;
-}
-
 .wrapper {
-  display: flex;
-  justify-content: stretch;
+  @apply flex justify-stretch
 }
 
 a,
 a:focus {
   color: inherit !important;
-  text-decoration: none !important;
-  cursor: pointer;
-  transition: all 0.3s;
+  @apply decoration-0 cursor-pointer transition-all
 }
 
 a:hover {
@@ -210,4 +197,14 @@ span.error {
     display: block;
     margin-bottom: 10px;
   }
+}
+
+.form-group {
+  label {
+    @apply block text-sm font-medium text-gray-700;
+  }
+}
+
+.form-control {
+  @apply mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200
 }
